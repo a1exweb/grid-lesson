@@ -1,0 +1,49 @@
+*
+    box-sizing: border-box
+.box
+    border: 1px solid #000
+    border-radius: 5px
+    &es
+        display: grid
+        gap: 20px
+        grid: repeat(2, 400px) / repeat(3, 1fr)
+        max-width: 1200px
+        margin: 50px auto
+    &-big
+        display: grid
+        grid: 1fr / 400px auto
+        grid-column: span 2
+        column-gap: 20px
+        overflow: hidden
+        padding-right: 20px
+        &__preview
+            background-color: #f0f
+        &__info
+            align-self: center
+    &-small
+        display: grid
+        grid: 250px 150px / 1fr
+        column-gap: 20px
+        overflow: hidden
+        &__preview
+            background-color: #0f0
+        &__info
+            align-self: center
+            margin: 20px
+@media (max-width: 1200px)
+    .box
+        &es
+            grid: repeat(3, 400px) / repeat(2, 1fr)
+@media (max-width: 992px)
+    .box
+        &es
+            grid: repeat(4, 400px) / 1fr
+        &-big
+            grid-column: unset
+@media (max-width: 768px)
+    .box
+        &-big
+            grid: 250px 150px / 1fr
+            padding-right: 0
+            &__info
+                margin: 20px
